@@ -1,0 +1,63 @@
+<html><head><title>AJAX POST Example</title>
+</head><body><center />
+<h1>Loading a web page into a DIV</h1>				
+<div id='info'>This sentence will be replaced</div>
+<script>
+
+// The following line has been changed to a simpler URL that
+// will quickly display from within the div it is placed
+params = "url=amazon.com"   				// параметр = значение(отправл на сервер)
+
+request = new ajaxRequest()						// Ajax-объект запроса
+request.open("POST", "ajax1(post).php", true) 		// метод open, настраивающий объект на созд POST-запроса по адресу ajax1(post).php
+request.setRequestHeader("Content-type", 					// настраивают заголовки,
+	"application/x-www-form-urlencoded")      				// необходимые для того,  
+request.setRequestHeader("Content-length", params.length)	// что бы получающий сервер 
+request.setRequestHeader("Connection", "close")   			// знал о поступлении POST-запроса
+	
+request.onreadystatechange = function()
+{
+	if (this.readyState == 4)   // this ссылается на текущий объект (request)
+	{
+		if (this.status == 200)
+		{
+			if (this.responseText != null)
+			{
+				document.getElementById('info').innerHTML =
+					this.responseText
+			}
+			else alert("Ajax error: No data received")
+		}
+		else alert( "Ajax error: " + this.statusText)
+	}
+}
+
+request.send(params)
+
+function ajaxRequest()
+{
+	try
+	{
+		var request = new XMLHttpRequest()
+	}
+	catch(e1)
+	{
+		try
+		{
+			request = new ActiveXObject("Msxml2.XMLHTTP")
+		}
+		catch(e2)
+		{
+			try
+			{
+				request = new ActiveXObject("Microsoft.XMLHTTP")
+			}
+			catch(e3)
+			{
+				request = false
+			}
+		}
+	}
+	return request
+}
+</script></body></html>
