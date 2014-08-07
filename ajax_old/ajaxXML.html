@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AJAX XML</title>
+<script>
+      
+
+xmlhttp = new loadXMLDoc()
+xmlhttp.open("GET", "ajaxXML.php?url=www.w3schools.com/ajax/cd_catalog.xml", true)
+txt = "";
+
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    txt="<table border='1'><tr><th>Title</th><th>Artist</th></tr>";
+    x=xmlhttp.responseXML.documentElement.getElementsByTagName("CD");
+    for (i=0;i<x.length;i++)
+      {
+      txt=txt + "<tr>";
+      xx=x[i].getElementsByTagName("TITLE");
+        {
+        try
+          {
+          txt=txt + "<td>" + xx[0].firstChild.nodeValue + "</td>";
+          }
+        catch (er)
+          {
+          txt=txt + "<td> </td>";
+          }
+        }
+      xx=x[i].getElementsByTagName("ARTIST");
+        {
+        try
+          {
+          txt=txt + "<td>" + xx[0].firstChild.nodeValue + "</td>";
+          }
+        catch (er)
+          {
+          txt=txt + "<td> </td>";
+          }
+        }
+      txt=txt + "</tr>";
+      }
+    txt=txt + "</table>";
+    document.getElementById('txtCDInfo').innerHTML=txt;
+    }
+  }
+
+xmlhttp.send(null)
+
+function loadXMLDoc()
+{
+  try
+  {
+    var request = new XMLHttpRequest()
+  }
+  catch(e1)
+  {
+    try
+    {
+      request = new ActiveXObject("Msxml2.XMLHTTP")
+    }
+    catch(e2)
+    {
+      try
+      {
+        request = new ActiveXObject("Microsoft.XMLHTTP")
+      }
+      catch(e3)
+      {
+        request = false
+      }
+    }
+  }
+  return request
+}
+
+</script>
+</head>
+<body>
+
+<div id="txtCDInfo">
+<button onclick="loadXMLDoc('cd_catalog.xml')">Get CD info</button>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+
+<title>Demo: jQuery AJAX Call to PHP Script with JSON Return</title>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".click").click(function(){
+		$.get('jsonPHP.php', function(data) {
+                    console.dir(data);
+                    alert(data);
+                }, "json");
+	});
+});
+</script>
+</head>
+
+<body>
+<p><b>jQuery AJAX Call to PHP Script with JSON Return</b></p>
+
+<div class="click">
+  [HTML is replaced when successful.]
+</div>
+
+</body>
+</html>

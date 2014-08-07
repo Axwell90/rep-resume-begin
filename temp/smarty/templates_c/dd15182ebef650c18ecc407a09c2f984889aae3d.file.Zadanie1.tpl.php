@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php /* Smarty version Smarty-3.1.18, created on 2014-08-07 10:53:22
+=======
+<?php /* Smarty version Smarty-3.1.18, created on 2014-07-03 19:08:50
+>>>>>>> abb2ccc9556af4d79f69a043f3207f4936f2c37f
          compiled from "/srv/http/temp/smarty/templates/Zadanie1.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:198116572538a1a47c3b613-97196323%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +11,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'dd15182ebef650c18ecc407a09c2f984889aae3d' => 
     array (
       0 => '/srv/http/temp/smarty/templates/Zadanie1.tpl',
+<<<<<<< HEAD
       1 => 1407401578,
+=======
+      1 => 1404407329,
+>>>>>>> abb2ccc9556af4d79f69a043f3207f4936f2c37f
       2 => 'file',
     ),
   ),
@@ -29,8 +37,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
    <meta charset="UTF-8">
 
       <title>SmartyTest</title>
+<<<<<<< HEAD
  <script type="text/javascript" src="jquery.js"></script>
  <script type="text/javascript" src="Zadanie1.js"></script>
+=======
+ <script type="text/javascript" src="../js/jquery.js"></script>
+ <script type="text/javascript" src="../js/Zadanie1.js"></script>
+>>>>>>> abb2ccc9556af4d79f69a043f3207f4936f2c37f
 
 </head>
 <body style="background-color:gray" text="#000080">
