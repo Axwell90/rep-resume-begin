@@ -4,13 +4,9 @@
    <meta charset="UTF-8">
 
       <title>SmartyTest</title>
-<<<<<<< HEAD
+      
  <script type="text/javascript" src="jquery.js"></script>
  <script type="text/javascript" src="Zadanie1.js"></script>
-=======
- <script type="text/javascript" src="../js/jquery.js"></script>
- <script type="text/javascript" src="../js/Zadanie1.js"></script>
->>>>>>> abb2ccc9556af4d79f69a043f3207f4936f2c37f
 
 </head>
 <body style="background-color:gray" text="#000080">
